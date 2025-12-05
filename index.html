@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Chosen Palette: Academic Slate & Blue -->
+    <title>Estudo Interativo: Responsabilidade Civil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link { transition: all 0.2s ease-in-out; }
+        .nav-link.active {
+            color: #1e3a8a; /* blue-800 */
+            background-color: #eef2ff; /* indigo-50 */
+            font-weight: 800; /* Extra bold for active tab */
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+        }
+        .content-section { display: none; }
+        .content-section.active { display: block; animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .schematic-table { width: 100%; border-collapse: collapse; text-align: left; }
+        .schematic-table th, .schematic-table td { padding: 10px; border: 1px solid #e2e8f0; }
+        .schematic-table th { background-color: #f8fafc; font-weight: 700; color: #1e3a8a; }
+
+        /* Custom styles for didactic boxes */
+        .didactic-box-title { color: #1d4ed8; font-weight: 800; border-bottom: 2px solid #93c5fd; padding-bottom: 4px; margin-bottom: 8px; }
+        .alert-red { background-color: #fee2e2; border-left-color: #dc2626; color: #991b1b; }
+        .alert-green { background-color: #d1fae5; border-left-color: #059669; color: #065f46; }
+        .alert-yellow { background-color: #fef3c7; border-left-color: #fbbf24; color: #92400e; }
+        .alert-blue { background-color: #eff6ff; border-left-color: #2563eb; color: #1e40af; }
+
+        details > summary { list-style: none; cursor: pointer; }
+        details > summary::-webkit-details-marker { display: none; }
+        
+        .quiz-option { transition: all 0.2s; }
+        .quiz-option:hover { background-color: #f1f5f9; }
+        .correct-answer { background-color: #d1fae5 !important; border-left-color: #10b981 !important; }
+        .incorrect-answer { background-color: #fee2e2 !important; border-left-color: #ef4444 !important; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+        
+        <header class="text-center mb-8 bg-white p-6 rounded-xl shadow-lg border-b-4 border-blue-700">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-blue-800">GUIA DE ESTUDOS: RESPONSABILIDADE CIVIL (RC)</h1>
+            <p class="text-lg text-slate-600 mt-2">Foco total em Elementos Essenciais e Alertas de Prova.</p>
+        </header>
+
+        <nav class="bg-white rounded-xl shadow-xl sticky top-4 z-10 mb-8 p-3">
+            <ul class="flex flex-wrap justify-center items-center gap-2 text-sm md:text-base">
+                <li><button class="nav-link px-3 py-2 md:px-4 md:py-2 text-slate-700 rounded-lg" data-target="modulo0">I. Base Conceitual</button></li>
+                <li><button class="nav-link px-3 py-2 md:px-4 md:py-2 text-slate-700 rounded-lg" data-target="modulo1">II. Modelo Dualista</button></li>
+                <li><button class="nav-link px-3 py-2 md:px-4 md:py-2 text-slate-700 rounded-lg" data-target="modulo2">III. 🎯 DANO (FOCO)</button></li>
+                <li><button class="nav-link px-3 py-2 md:px-4 md:py-2 text-slate-700 rounded-lg" data-target="modulo3">IV. Casos Objetivos</button></li>
+                <li><button class="nav-link px-3 py-2 md:px-4 md:py-2 text-slate-700 rounded-lg" data-target="modulo4">V. Excludentes</button></li>
+                <li><button class="nav-link px-3 py-2 md:px-4 md:py-2 text-slate-700 rounded-lg" data-target="modulo5">VI. Solidariedade</button></li>
+                <li><button class="nav-link px-3 py-2 md:px-4 md:py-2 text-slate-700 rounded-lg font-bold text-red-600" data-target="simulado">📝 Simulado Final</button></li>
+            </ul>
+        </nav>
+
+        <main id="main-content">
+            
+            <!-- I. BASE CONCEITUAL E EVOLUÇÃO -->
+            <section id="modulo0" class="content-section">
+                <div class="bg-white p-6 rounded-xl shadow-2xl space-y-6 border-l-4 border-blue-600">
+                    <h2 class="text-2xl font-extrabold text-blue-800 border-b pb-3">I. BASE CONCEITUAL E EVOLUÇÃO (FOCO TEÓRICO)</h2>
+                    
+                    <!-- Conceito e Finalidade -->
+                    <div class="p-4 rounded-lg alert-green border-l-8 border-green-700 shadow-md">
+                        <p class="font-extrabold text-lg text-green-900 mb-1">CONCEITO DE RESPONSABILIDADE CIVIL (RC)</p>
+                        <p class="text-base text-green-800">É a aplicação de medidas que obrigam a <span class="font-extrabold text-green-900">REPARAR O DANO</span> (moral ou patrimonial) causado a terceiros.</p>
+                        <p class="text-sm mt-2 font-bold">🎯 Finalidade Central: <span class="text-green-900">Integral Ressarcimento da Vítima</span> e restabelecimento do equilíbrio pessoal/social.</p>
+                    </div>
+
+                    <h3 class="text-xl font-extrabold text-blue-800 pt-4 border-t mt-4">1. Evolução e Impulso Moderno</h3>
+                    <ul class="list-disc list-inside space-y-3 pl-4 text-slate-700">
+                        <li><span class="font-bold text-slate-900">Idade Média:</span> Início da separação da RC da pena criminal, focada nas noções de <span class="font-bold text-red-700">DOLO e CULPA</span>.</li>
+                        <li><span class="font-bold text-slate-900">Código de Napoleão:</span> Consolidou a <span class="font-extrabold text-red-700">CULPA como FUNDAMENTO PRINCIPAL</span>.</li>
+                        <li><span class="font-bold text-slate-900">Impulso Moderno:</span> O avanço tecnológico e a sociedade de massa tornaram a prova da culpa <span class="font-extrabold text-blue-700">INSUFICIENTE</span>. Isso gerou a necessidade da <span class="font-extrabold text-green-700">Objetivação da RC</span> (saída do foco no ofensor para o foco na vítima).</li>
+                    </ul>
+
+                    <div class="mt-4 p-3 rounded-lg border-l-4 alert-yellow font-extrabold">
+                        <span class="text-lg">DICA TEÓRICA DE OURO:</span> O Código Civil de 2002 adotou o <span class="text-yellow-900">MODELO DUALISTA</span> (Culpa + Risco) justamente para superar a insuficiência da teoria da Culpa diante dos riscos da vida moderna!
+                    </div>
+
+                    <h3 class="text-xl font-extrabold text-blue-800 pt-4 border-t mt-4">2. Classificação da RC (Quanto à Origem)</h3>
+                    <div class="overflow-x-auto">
+                        <table class="schematic-table text-sm">
+                            <thead><tr><th>Modalidade</th><th>Fundamento (Origem)</th><th>O que o Agente Violou</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="font-bold text-blue-700">Contratual</span></td>
+                                    <td>Inadimplemento de <span class="font-extrabold">OBRIGAÇÃO PRÉ-EXISTENTE</span> (contrato).</td>
+                                    <td><span class="font-extrabold text-blue-900">DEVER ESPECÍFICO</span> de prestação (Ex.: não entregar o produto; transportador falhar em garantir a incolumidade do passageiro).</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="font-bold text-red-700">Extracontratual (Aquiliana)</span></td>
+                                    <td><span class="font-extrabold">ATO ILÍCITO</span> (Art. 186 do CC). Não há vínculo anterior.</td>
+                                    <td><span class="font-extrabold text-red-900">DEVER JURÍDICO GERAL</span> de não lesar (Ex.: acidente de trânsito entre estranhos; responsabilidade civil do Estado).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- II. O MODELO DUALISTA E OS FUNDAMENTOS DA RESPONSABILIDADE -->
+            <section id="modulo1" class="content-section">
+                <div class="bg-white p-6 rounded-xl shadow-2xl space-y-6 border-l-4 border-blue-600">
+                    <h2 class="text-2xl font-extrabold text-blue-800 border-b pb-3">II. O MODELO DUALISTA: REGRAS E EXCEÇÕES</h2>
+                    
+                    <p class="text-slate-700 font-semibold mb-6">O Código Civil de 2002 adotou o <span class="font-extrabold text-blue-800">Modelo Dualista</span>, que reconhece duas bases para a obrigação de indenizar: a <span class="font-extrabold text-red-700">CULPA</span> (Regra) e o <span class="font-extrabold text-green-700">RISCO</span> (Exceção).</p>
+                    
+                    <!-- A. Responsabilidade Subjetiva - Foco no Agente -->
+                    <h3 class="text-xl font-extrabold text-red-700 border-b pb-2">A. Responsabilidade Subjetiva (A Regra: Onde a Culpa é Essencial)</h3>
+                    <p class="text-slate-700 text-base">A responsabilidade subjetiva é a regra geral. Para que o responsável seja obrigado a indenizar, é <span class="font-extrabold text-red-700">indispensável que a vítima prove</span> que ele agiu com uma falha de conduta.</p>
+                    
+                    <div class="p-4 bg-red-50 rounded-lg border-l-4 border-red-500 shadow-md">
+                        <p class="font-extrabold text-red-800 mb-2">Fundamento Legal: <i>ATO ILÍCITO</i> (Art. 186 do CC)</p>
+                        <blockquote class="text-sm italic text-slate-700 border-l-2 pl-2 border-red-500">
+                            "Aquele que, por ação ou omissão voluntária, negligência ou imprudência, viola direito e causa dano a outrem, ainda que exclusivamente moral, comete ato ilícito".
+                        </blockquote>
+                    </div>
+
+                    <h4 class="text-lg font-bold text-red-800 pt-4">Análise da Culpa (<i>Lato Sensu</i>)</h4>
+                    <div class="overflow-x-auto">
+                        <table class="schematic-table text-sm">
+                            <thead><tr><th>Termo do CC</th><th>Conceito em Linguagem Clara</th><th>Abrangência Legal</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="font-bold text-red-900">Dolo</span></td>
+                                    <td><span class="font-extrabold">Intenção de Causar o Dano</span>. O agente quis o resultado lesivo ou assumiu o risco de produzi-lo.</td>
+                                    <td><span class="font-extrabold text-red-700">Culpa <i>lato sensu</i></span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="font-bold text-red-900">Culpa <i>stricto sensu</i></span></td>
+                                    <td><span class="font-extrabold">Falta de Cuidado</span> (Negligência, Imprudência ou Imperícia). Não havia intenção de causar o dano.</td>
+                                    <td><span class="font-extrabold text-red-700">Culpa <i>lato sensu</i></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Negligência</td>
+                                    <td><span class="font-extrabold">Omissão</span> ou falta de cautela (Deixar de fazer).</td>
+                                    <td><span class="text-slate-600">Culpa <i>stricto sensu</i></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Imprudência</td>
+                                    <td><span class="font-extrabold">Ação precipitada</span> ou temerária (Fazer o que não devia).</td>
+                                    <td><span class="text-slate-600">Culpa <i>stricto sensu</i></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Imperícia</td>
+                                    <td><span class="font-extrabold">Falta de aptidão técnica</span> ou inobservância de regras profissionais.</td>
+                                    <td><span class="text-slate-600">Culpa <i>stricto sensu</i></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="text-sm mt-4 p-2 bg-slate-100 rounded-md border-l-2 border-slate-300">
+                        <span class="font-extrabold">Em Resumo:</span> Na Responsabilidade Subjetiva, se o ofensor causou o dano, a vítima deve provar que essa ação ou omissão foi resultado de <span class="font-extrabold text-red-700">Dolo ou de Culpa</span> (<i>negligência, imprudência ou imperícia</i>).
+                    </p>
+
+                    <div class="mt-4 p-3 rounded-lg border-l-4 alert-red font-extrabold">
+                        <span class="text-lg">PEGADINHA DE PROVA:</span> Se a vítima não provar o dolo ou a culpa (<i>lato sensu</i>) do agente, <span class="text-red-900">não há indenização</span>, a menos que o caso seja de Responsabilidade Objetiva.
+                    </div>
+
+                    <!-- B. Responsabilidade Objetiva - Foco na Vítima -->
+                    <h3 class="text-xl font-extrabold text-green-700 border-b pb-2 mt-8">B. Responsabilidade Objetiva (A Exceção: Onde a Culpa é Dispensada)</h3>
+                    <p class="text-slate-700 text-base">A Responsabilidade Objetiva foi impulsionada pelas exigências da vida moderna e pela insuficiência da culpa para cobrir todos os prejuízos. O ponto central é que ela <span class="font-extrabold text-green-700">DISPENSA a análise da culpa</span> do ofensor.</p>
+                    
+                    <div class="p-4 bg-green-50 rounded-lg border-l-4 border-green-500 shadow-md">
+                        <p class="font-extrabold text-green-800 mb-2">Fundamento: O <i>RISCO</i> e a Lei</p>
+                        <p class="text-sm font-bold text-green-800 mb-1">Base Legal (Cláusula Geral de Risco - Art. 927, Parágrafo Único, CC):</p>
+                        <blockquote class="text-sm italic text-slate-700 border-l-2 pl-2 border-green-500">
+                            "Haverá obrigação de reparar o dano, <span class="font-extrabold">independentemente de culpa</span>, nos casos especificados em lei, ou quando a <span class="font-extrabold">atividade normalmente desenvolvida implicar, por sua natureza, risco</span> para os direitos de outrem".
+                        </blockquote>
+                    </div>
+                    
+                    <p class="text-sm mt-4 p-2 bg-slate-100 rounded-md border-l-2 border-slate-300">
+                        <span class="font-extrabold">Em Resumo:</span> Na RC Objetiva, o foco se concentra apenas na simples causação externa decorrente do exercício da atividade. A vítima precisa provar apenas o <span class="font-extrabold text-green-700">DANO</span> e o <span class="font-extrabold text-green-700">NEXO DE CAUSALIDADE</span> (a ligação direta entre a atividade e o prejuízo).
+                    </p>
+
+                    <div class="mt-4 p-3 rounded-lg border-l-4 alert-yellow font-extrabold">
+                        <span class="text-lg">ALERTA FUNDAMENTAL (CC/2002):</span> O estabelecimento da RC no <span class="text-yellow-900">RISCO</span> reflete uma transição da ênfase no ofensor para a <span class="text-yellow-900">PROTEÇÃO DA VÍTIMA</span>. Exemplos práticos incluem a responsabilidade dos empregadores por seus prepostos (Art. 932 e 933 do CC) e a responsabilidade de fornecedores no CDC.
+                    </div>
+
+                    <!-- Tabela Revisada -->
+                    <h3 class="text-xl font-extrabold text-blue-800 pt-4 border-t mt-8">QUADRO COMPARATIVO DO MODELO DUALISTA</h3>
+                    <div class="overflow-x-auto">
+                        <table class="schematic-table text-sm">
+                            <thead>
+                                <tr>
+                                    <th>Modalidade</th>
+                                    <th>Elemento Subjetivo</th>
+                                    <th>Foco da Prova</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="font-bold text-red-600">Responsabilidade Subjetiva (Regra)</span></td>
+                                    <td><span class="font-extrabold text-red-700">Culpa <i>lato sensu</i></span> (Dolo, Negligência, Imprudência ou Imperícia).</td>
+                                    <td>O lesado deve provar a <span class="font-extrabold">falha de conduta</span> do agente, baseada no <span class="font-extrabold text-red-700">Ato Ilícito (Art. 186 do CC)</span>.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="font-bold text-green-600">Responsabilidade Objetiva (Exceção)</span></td>
+                                    <td><span class="font-extrabold text-green-700">Prescinde de Culpa</span> (Independente de culpa).</td>
+                                    <td>O lesado precisa provar apenas o <span class="font-extrabold">Dano</span> e o <span class="font-extrabold">Nexo de Causalidade</span> entre o dano e a atividade de risco <span class="font-extrabold text-green-700">(Art. 927, p. único do CC)</span>.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- III. O DANO (FOCO TOTAL) -->
+            <section id="modulo2" class="content-section">
+                <div class="bg-white p-6 rounded-xl shadow-2xl space-y-6 border-l-4 border-blue-600">
+                    <h2 class="text-2xl font-extrabold text-blue-800 border-b pb-3">III. 🎯 O DANO: ELEMENTO INDISPENSÁVEL</h2>
+                    <p class="text-slate-700">O dano é a lesão ao interesse jurídico da vítima e sua prova é <span class="font-extrabold text-red-700">SEMPRE</span> obrigatória. O dano se divide em Patrimonial (Material) e Extrapatrimonial (Moral, Estético).</p>
+
+                    <!-- Dano Patrimonial -->
+                    <h3 class="text-xl font-extrabold text-blue-800 pt-4 border-t mt-4">1. Dano Patrimonial (Material)</h3>
+                    <p class="text-slate-600 text-sm">Lesão a bens com valor econômico (Art. 402 do CC). Compreende duas faces:</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                        <!-- Dano Emergente -->
+                        <div class="p-4 bg-red-50 rounded-lg border-l-4 border-red-500">
+                            <h4 class="font-extrabold text-red-700 didactic-box-title border-red-700">1.1. Dano Emergente (O Prejuízo Imediato)</h4>
+                            <ul class="text-sm text-slate-800 list-disc list-inside space-y-1">
+                                <li><span class="font-bold">O que é:</span> É a <span class="font-extrabold">PERDA EFETIVA</span>. O que já saiu do patrimônio da vítima.</li>
+                                <li><span class="font-bold">Palavra-chave:</span> <span class="text-red-900">DIMINUIÇÃO</span> no valor do bem.</li>
+                                <li><span class="font-bold">Exemplo Prático:</span> Custo da peça de reposição do carro, gastos com táxi devido à avaria, contas de hospital e medicamentos.</li>
+                            </ul>
+                        </div>
+                        <!-- Lucros Cessantes -->
+                        <div class="p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
+                            <h4 class="font-extrabold text-green-700 didactic-box-title border-green-700">1.2. Lucros Cessantes (O que Você Deixou de Ganhar)</h4>
+                            <ul class="text-sm text-slate-800 list-disc list-inside space-y-1">
+                                <li><span class="font-bold">O que é:</span> É o que a vítima <span class="font-extrabold">RAZOAVELMENTE DEIXOU DE LUCRAR</span>. Exige prova de probabilidade de ganho.</li>
+                                <li><span class="font-bold">Palavra-chave:</span> <span class="text-green-900">AUMENTO</span> que não veio.</li>
+                                <li><span class="font-bold">Exemplo Prático:</span> Diárias perdidas por um Uber/taxista, comissão de vendas que não pôde ser fechada, rendimentos de um imóvel paralisado.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 p-3 rounded-lg border-l-4 alert-blue font-extrabold">
+                        <span class="text-xl font-extrabold">DICA DE OURO:</span> Para a prova, memorize: Dano Emergente é <span class="font-extrabold text-blue-900">"O que eu perdi"</span>, e Lucros Cessantes é <span class="font-extrabold text-blue-900">"O que eu deixei de ganhar"</span>. Ambos exigem prova concreta!
+                    </div>
+
+                    <!-- Dano Extrapatrimonial e Perda da Chance -->
+                    <h3 class="text-xl font-extrabold text-blue-800 pt-4 border-t mt-4">2. Dano Extrapatrimonial e a Chance</h3>
+                    <p class="text-slate-600 text-sm">Lesão a direitos da personalidade (honra, imagem, dignidade).</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
+                        <!-- Dano Moral Puro -->
+                        <div class="p-4 bg-indigo-50 rounded-lg border-l-4 border-indigo-500">
+                            <h4 class="font-extrabold text-indigo-700 didactic-box-title border-indigo-700">2.1. Dano Moral (Dor)</h4>
+                            <p class="text-sm text-slate-700 mt-1">Lesão à esfera íntima (paz, honra, dignidade). É o <span class="font-bold">sofrimento interno</span>.</p>
+                            <p class="text-xs text-indigo-600 mt-2 <i>">Exemplo: Nome negativado indevidamente; ofensa à honra em público.</p>
+                        </div>
+                        <!-- Dano Estético -->
+                        <div class="p-4 bg-pink-50 rounded-lg border-l-4 border-pink-500">
+                            <h4 class="font-extrabold text-pink-700 didactic-box-title border-pink-700">2.2. Dano Estético (Aparência)</h4>
+                            <p class="text-sm text-slate-700 mt-1">É a <span class="font-bold">alteração permanente ou duradoura da aparência</span> (deformidade). Julgado como um dano autônomo.</p>
+                            <p class="text-xs text-pink-600 mt-2 <i>">Exemplo: Cicatriz extensa e visível no rosto; amputação de membro; marcas irreversíveis de queimaduras.</p>
+                        </div>
+                         <!-- Perda de uma Chance -->
+                        <div class="p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
+                            <h4 class="font-extrabold text-yellow-700 didactic-box-title border-yellow-700">2.3. Perda de uma Chance (Oportunidade)</h4>
+                            <p class="text-sm text-slate-700 mt-1">O dano não é o resultado, mas a <span class="font-bold">perda da chance real e séria</span> de obter um benefício ou evitar um prejuízo.</p>
+                            <p class="text-xs text-yellow-600 mt-2 <i>">Exemplo: Advogado perde prazo de recurso com alta chance de vitória; operadora cancela voo impedindo entrevista de emprego crucial.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- DANO PUNITIVO E DESVIO PRODUTIVO -->
+                    <h3 class="text-xl font-extrabold text-blue-800 pt-4 border-t mt-4">3. Função Punitiva e Pedagógica da RC (DANO PUNITIVO)</h3>
+                    
+                    <div class="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-600 shadow-md">
+                        <h4 class="font-extrabold text-blue-800 didactic-box-title border-blue-800">📖 Dano Moral Pedagógico-Punitivo vs. Teoria do Desvio Produtivo</h4>
+                        
+                        <p class="font-bold text-slate-800 mt-4 mb-2">🔹 O que é Dano Moral Pedagógico-Punitivo?</p>
+                        <ul class="list-disc list-inside space-y-1 text-sm pl-3 text-slate-700">
+                            <li>Baseado nos arts. 186 e 927 do Código Civil.</li>
+                            <li>Vai além da simples compensação da vítima.</li>
+                            <li><span class="font-bold">Objetivos principais:</span> Punir o ofensor pelo ato ilícito; Educar o ofensor e a coletividade para evitar repetições; Prevenir a multiplicidade de condutas abusivas.</li>
+                        </ul>
+                        <div class="p-2 mt-3 mb-3 bg-red-100 rounded-md border border-red-300">
+                            <p class="font-bold text-red-800 text-sm">Exemplo Prático (Punitivo):</p>
+                            <p class="text-xs text-red-700">Uma empresa insiste em enviar cobranças abusivas para milhares de consumidores. A indenização não serve apenas para reparar cada vítima; deve ter valor suficiente para <span class="font-extrabold">INIBIR NOVAS PRÁTICAS</span>.</p>
+                        </div>
+                        <p class="text-xs text-blue-600 mt-2 <i>">📌 Analogia: funciona como uma multa de trânsito — aplicada não apenas para punir, mas para educar e prevenir.</p>
+
+                        <p class="font-bold text-slate-800 mt-4 mb-2">🔹 O que é a Teoria do Desvio Produtivo do Consumidor?</p>
+                        <ul class="list-disc list-inside space-y-1 text-sm pl-3 text-slate-700">
+                            <li>Criada por <span class="font-extrabold">Marcos Dessaune</span> e reconhecida pelo STJ.</li>
+                            <li><span class="font-bold">Base:</span> tempo é um bem jurídico ligado à dignidade da pessoa humana (CF/88, art. 1º, III).</li>
+                            <li>Quando o consumidor precisa gastar seu tempo resolvendo problemas criados pelo fornecedor, há <span class="font-extrabold">dano indenizável</span>.</li>
+                        </ul>
+                         <div class="p-2 mt-3 mb-3 bg-green-100 rounded-md border border-green-300">
+                            <p class="font-bold text-green-800 text-sm">Exemplo Prático (Desvio Produtivo):</p>
+                            <p class="text-xs text-green-700">Um cliente tenta cancelar um serviço, mas passa <span class="font-extrabold">horas em call centers</span>, transferências e protocolos. Esse tempo poderia ser usado para trabalho, estudo ou lazer; a perda do tempo útil configura dano moral indenizável (<span class="font-extrabold">dano in re ipsa</span>).</p>
+                        </div>
+                        <p class="text-xs text-blue-600 mt-2 <i>">📌 Analogia: é como se o consumidor fosse obrigado a trabalhar de graça para a empresa, desperdiçando seu tempo para corrigir falhas que não cometeu.</p>
+                    </div>
+
+                    <h4 class="text-lg font-extrabold text-blue-800 pt-4 mt-4">🔹 Comparação Didática</h4>
+                    <div class="overflow-x-auto">
+                        <table class="schematic-table text-sm">
+                            <thead>
+                                <tr>
+                                    <th>Aspecto</th>
+                                    <th>Dano Moral Pedagógico-Punitivo</th>
+                                    <th>Teoria do Desvio Produtivo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Finalidade</td>
+                                    <td>Punir + Educar + Prevenir</td>
+                                    <td>Reparar a perda do tempo útil</td>
+                                </tr>
+                                <tr>
+                                    <td>Base Legal</td>
+                                    <td>CC, arts. 186 e 927</td>
+                                    <td>CC + CDC (arts. 6º e 39)</td>
+                                </tr>
+                                <tr>
+                                    <td>Prova do Dano</td>
+                                    <td>Não exige prova de abalo profundo</td>
+                                    <td>Tempo perdido já configura dano (in re ipsa)</td>
+                                </tr>
+                                <tr>
+                                    <td>Foco</td>
+                                    <td>Desestimular condutas abusivas</td>
+                                    <td>Proteger a dignidade do tempo</td>
+                                </tr>
+                                <tr>
+                                    <td>Exemplo</td>
+                                    <td>Multa para empresa que cobra indevidamente em massa</td>
+                                    <td>Indenização por horas perdidas em call center</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="mt-4 p-3 rounded-lg border-l-4 alert-green font-extrabold">
+                        <span class="text-lg">Conclusão:</span> O dano moral pedagógico-punitivo foca em responsabilizar para educar, prevenindo abusos. A teoria do desvio produtivo foca na <span class="text-green-900">valorização do tempo humano</span>, reconhecendo que o desperdício injusto de tempo também é um dano. Juntos, fortalecem a proteção da dignidade e garantem relações mais equilibradas.
+                    </div>
+                    <!-- FIM DANO PUNITIVO E DESVIO PRODUTIVO -->
+
+                    <div class="mt-4 p-3 rounded-lg border-l-4 alert-red font-extrabold">
+                        <span class="text-xl font-extrabold">ALERTA STJ (SÚMULA 387):</span> É totalmente permitida a <span class="text-red-900">CUMULAÇÃO</span> de Dano Moral e Dano Estético, desde que haja <span class="text-red-900">FATOS GERADORES DISTINTOS</span>.
+                    </div>
+
+                    <!-- Desvio Produtivo e Nexo -->
+                    <h3 class="text-xl font-extrabold text-blue-800 pt-4 border-t mt-4">4. Nexo de Causalidade (O Elenco)</h3>
+                    
+                    <div class="p-4 bg-gray-50 rounded-lg border-l-4 border-gray-500 mt-2">
+                        <p class="text-sm text-slate-700">É a ligação de causa e efeito entre a <span class="font-bold">conduta</span> e o <span class="font-bold">dano</span>. O Brasil adota a Teoria do <span class="font-bold text-red-700">Dano Direto e Imediato</span> (Art. 403, CC), ou seja, só se indeniza o que é consequência direta da conduta.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- IV. APLICAÇÃO E CASOS PRÁTICOS DA RESPONSABILIDADE OBJETIVA (ATUALIZADO) -->
+            <section id="modulo3" class="content-section">
+                 <div class="bg-white p-6 rounded-xl shadow-2xl space-y-6 border-l-4 border-blue-600">
+                    <h2 class="text-2xl font-extrabold text-blue-800 border-b pb-3">IV. CASOS OBJETIVOS: APLICAÇÃO E FUNDAMENTOS</h2>
+                    <p class="text-slate-700 font-semibold mb-6">A Responsabilidade Civil Objetiva se aplica quando a <span class="font-extrabold text-blue-700">lei determina</span> expressamente ou quando há <span class="font-extrabold text-blue-700">RISCO inerente à atividade</span> (Art. 927, p. único do CC).</p>
+                    
+                    <!-- I. As 4 Hipóteses Fundamentais (Conteúdo solicitado pelo usuário) -->
+                    <h3 class="text-xl font-extrabold text-red-700 border-b pb-2">I. As 4 Hipóteses Fundamentais de Aplicação – com Exemplos</h3>
+                    <div class="overflow-x-auto">
+                        <table class="schematic-table text-sm">
+                            <thead>
+                                <tr><th>Categoria</th><th>Descrição da Aplicação</th><th>Princípio Fundante</th><th>Exemplo Prático</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="font-bold text-red-900">1. Legais Expressas</span></td>
+                                    <td>A lei define expressamente a responsabilidade como objetiva (ex.: CDC, Lei Ambiental).</td>
+                                    <td><span class="font-extrabold text-blue-800">Determinação Legal</span></td>
+                                    <td>Empresa aérea responde objetivamente por extravio de bagagem (CDC, art. 14). Indústria responde por dano ambiental (Lei 6.938/81).</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="font-bold text-red-900">2. Dever de Vigilância (Coisa/Animal)</span></td>
+                                    <td>O guardião responde objetivamente pelo dano causado pela coisa ou animal sob sua custódia.</td>
+                                    <td><span class="font-extrabold text-blue-800">Responsabilidade do Guardião</span></td>
+                                    <td>Dono de cão responde se o animal morder um pedestre. Proprietário responde por queda de telha mal fixada que atinge um transeunte.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="font-bold text-red-900">3. Responsabilidade por Ato de Terceiro (arts. 932 e 933 CC)</span></td>
+                                    <td>O responsável indireto (pais, empregadores, tutores) responde objetivamente pelos atos praticados pelo agente direto.</td>
+                                    <td><span class="font-extrabold text-blue-800">Responsabilidade do Indireto</span></td>
+                                    <td>Pais respondem por danos causados pelo filho menor. Empresa responde por acidente causado por seu motorista durante o expediente.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="font-bold text-red-900">4. Risco Integral Atrelado ao Negócio ou Atividade</span></td>
+                                    <td>Regime mais rigoroso de responsabilidade civil, praticamente sem excludentes, aplicado a atividades de risco elevado ou extremo.</td>
+                                    <td><span class="font-extrabold text-blue-800">Risco Extremo</span></td>
+                                    <td>Empresa que transporta explosivos responde mesmo em caso de força maior. Usina nuclear responde por danos radioativos, ainda que decorrentes de catástrofe natural.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- II. O Paradoxo da Culpa no Ato de Terceiro (Conteúdo solicitado pelo usuário) -->
+                    <h3 class="text-xl font-extrabold text-blue-800 pt-4 border-t mt-4">II. O Paradoxo da Culpa no Ato de Terceiro (Hipótese 3)</h3>
+                    <div class="p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
+                        <p class="text-sm text-slate-700 mb-3">Embora a responsabilidade de pais e empregadores seja <span class="font-extrabold">OBJETIVA</span>, os conceitos de culpa (como <i>in vigilando</i>) explicam o fundamento material da obrigação. A vítima <span class="font-extrabold text-yellow-900">NÃO precisa provar</span> essa culpa.</p>
+                        <div class="overflow-x-auto">
+                            <table class="schematic-table text-xs">
+                                <thead>
+                                    <tr><th>Conceito de Culpa</th><th>Detalhamento</th><th>Exemplo Prático</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="font-bold text-yellow-800">Culpa <i>in Vigilando</i></span></td>
+                                        <td>Falha no dever legal de supervisão, guarda ou fiscalização.</td>
+                                        <td>Motorista de frota (empregado) causa acidente por imprudência durante o serviço. (Empregador responde).</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="font-bold text-yellow-800">Culpa <i>in Eligendo</i></span></td>
+                                        <td>Falha na escolha, seleção ou designação de um preposto, delegando a tarefa a um indivíduo inadequado.</td>
+                                        <td>Dono de obra contrata profissional sem qualificação para serviço de risco, causando dano a terceiro.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-sm mt-3 font-extrabold text-yellow-900">Lembrete Essencial: A vítima SÓ prova o Dano, o Ato do Agente Direto e o Nexo Causal.</p>
+                    </div>
+
+                    <!-- III. O Regime do Risco Integral e Suas Excludentes -->
+                    <h3 class="text-xl font-extrabold text-blue-800 pt-4 border-t mt-4">III. O Regime do Risco Integral e Suas Excludentes</h3>
+                    <p class="text-sm text-slate-700">O Risco Integral é a máxima aplicação da RC Objetiva. A responsabilidade é tão elevada que, em regra, <span class="font-extrabold text-red-700">NÃO ACEITA</span> as excludentes padrão, como Fato de Terceiro ou Força Maior.</p>
+                    <div class="overflow-x-auto">
+                        <table class="schematic-table text-sm">
+                            <thead>
+                                <tr><th>Regime</th><th>Aceita Fato de Terceiro/Fortuito?</th><th>Única Excludente Aceita</th><th>Exemplos</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="font-bold text-green-700">RC Objetiva Padrão</span></td>
+                                    <td><span class="font-extrabold">SIM</span> (Rompimento do Nexo Causal).</td>
+                                    <td>Rompimento do Nexo Causal (incluindo as excludentes tradicionais).</td>
+                                    <td>RC por acidente de veículo, RC por vício do produto (CDC).</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="font-bold text-red-700">Risco Integral</span></td>
+                                    <td><span class="font-extrabold text-red-900">NÃO</span>.</td>
+                                    <td><span class="font-extrabold text-blue-800">APENAS</span> Rompimento do Nexo Causal (provar que a conduta não gerou o dano).</td>
+                                    <td>Dano Ambiental (Lei 6.938/81) e Acidentes Nucleares.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- LEMBRETE DE PROVA (CDC EXCEÇÃO) -->
+                    <div class="mt-4 p-3 rounded-lg border-l-4 alert-red font-extrabold">
+                        <span class="text-lg">🚨 LEMBRETE DE PROVA (A Grande Exceção do CDC)</span>
+                        <p class="text-sm mt-2">A responsabilidade pessoal dos <span class="text-red-900">PROFISSIONAIS LIBERAIS</span> no Código de Defesa do Consumidor (CDC) é a única exceção à regra geral de RC Objetiva do Código:</p>
+                        <ul class="list-disc list-inside text-sm mt-2 font-normal">
+                            <li>A RC do profissional (médico, advogado, engenheiro, etc.) **É SUBJETIVA**.</li>
+                            <li>Exige prova de <span class="font-extrabold text-red-900">culpa</span> (negligência, imprudência ou imperícia) por parte da vítima.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- V. EXCLUDENTES DE RESPONSABILIDADE -->
+            <section id="modulo4" class="content-section">
+                <div class="bg-white p-6 rounded-xl shadow-2xl space-y-6 border-l-4 border-blue-600">
+                    <h2 class="text-2xl font-extrabold text-blue-800 border-b pb-3">IV. EXCLUDENTES DE RESPONSABILIDADE (Nexo e Ilicitude)</h2>
+                    
+                    <!-- 1. Excludentes de Nexo Causal -->
+                    <h3 class="text-xl font-extrabold text-blue-800 pt-4 border-t mt-4">1. Excludentes de Nexo Causal</h3>
+                    <p class="text-slate-700">São eventos que rompem a ligação entre a conduta do agente e o dano.</p>
+                    <ul class="list-disc list-inside space-y-2 pl-4 text-slate-700 font-bold">
+                        <li><span class="text-red-700">Culpa Exclusiva da Vítima</span></li>
+                        <li><span class="text-red-700">Fato de Terceiro</span></li>
+                        <li><span class="text-red-700">Caso Fortuito ou Força Maior</span></li>
+                    </ul>
+
+                    <h3 class="text-xl font-extrabold text-red-800 pt-4 border-t mt-4">ALERTA MÁXIMO: O Fortuito na RC Objetiva</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-red-100 rounded-lg border-l-4 border-red-500">
+                            <h4 class="font-extrabold text-red-900">1. Fortuito INTERNO (Não Exclui)</h4>
+                            <p class="text-sm text-slate-700">É o risco <span class="font-extrabold">INTRÍNSECO</span> (interno) à atividade.</p>
+                            <p class="text-sm font-extrabold text-red-700 mt-1">Regra: <span class="text-red-900">NÃO</span> rompe o nexo causal.</p>
+                        </div>
+                        <div class="p-4 bg-green-100 rounded-lg border-l-4 border-green-500">
+                            <h4 class="font-extrabold text-green-900">2. Fortuito EXTERNO (Exclui)</h4>
+                            <p class="text-sm text-slate-700">É um evento <span class="font-extrabold">TOTALMENTE ESTRANHO</span> à atividade.</p>
+                            <p class="text-sm font-extrabold text-green-700 mt-1">Regra: <span class="text-green-900">ROMPE</span> o nexo causal e afasta a responsabilidade.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. Excludentes de Ilicitude -->
+                    <h3 class="text-xl font-extrabold text-blue-800 pt-4 border-t mt-4">2. Excludentes de Ilicitude (Art. 188 CC)</h3>
+                    <p class="text-slate-700">O ato é lícito, mas pode gerar dever de indenizar.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                        <div class="p-4 bg-indigo-50 rounded-lg border-l-4 border-indigo-500">
+                            <h4 class="font-extrabold text-indigo-700">Legítima Defesa</h4>
+                            <p class="text-xs text-slate-700">Não gera indenização ao agressor. Se atingir terceiro inocente (<i>Aberratio Ictus</i>), deve indenizar o terceiro e buscar regresso contra o agressor.</p>
+                        </div>
+                        <div class="p-4 bg-indigo-50 rounded-lg border-l-4 border-indigo-500">
+                            <h4 class="font-extrabold text-indigo-700">Estado de Necessidade</h4>
+                            <p class="text-xs text-slate-700">Ato para remover perigo iminente. Se causar dano a terceiro inocente, **DEVE INDENIZAR** (Arts. 929/930), tendo regresso contra o culpado pelo perigo.</p>
+                        </div>
+                        <div class="p-4 bg-indigo-50 rounded-lg border-l-4 border-indigo-500 md:col-span-2">
+                            <h4 class="font-extrabold text-indigo-700">Exercício Regular de Direito</h4>
+                            <p class="text-xs text-slate-700">Agir conforme o direito não gera ilícito, desde que não haja abuso.</p>
+                        </div>
+                    </div>
+
+                    <!-- 3. Cláusulas de Não Indenizar -->
+                    <h3 class="text-xl font-extrabold text-blue-800 pt-4 border-t mt-4">3. Cláusulas de Não Indenizar</h3>
+                    <ul class="list-disc list-inside space-y-1 text-sm text-slate-700">
+                        <li><span class="font-bold text-red-700">CDC:</span> São NULAS de pleno direito (Art. 51, I).</li>
+                        <li><span class="font-bold text-green-700">Civil (Paritários):</span> Válidas em regra, mas não podem excluir dolo ou culpa grave, nem ofender a ordem pública.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- VI. SOLIDARIEDADE E SUBSIDIÁRIA -->
+            <section id="modulo5" class="content-section">
+                <div class="bg-white p-6 rounded-xl shadow-2xl space-y-6 border-l-4 border-blue-600">
+                    <h2 class="text-2xl font-extrabold text-blue-800 border-b pb-3">VI. SOLIDARIEDADE E SUBSIDIÁRIA</h2>
+                    <p class="text-slate-700">Define como a vítima pode cobrar os múltiplos responsáveis pelo dano.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-indigo-100 rounded-lg border-l-4 border-indigo-500">
+                            <h4 class="font-extrabold text-indigo-800">1. Responsabilidade SOLIDÁRIA</h4>
+                            <p class="text-sm text-slate-700 mt-1">Todos os responsáveis respondem <span class="font-extrabold text-indigo-900">INTEGRALMENTE</span> pelo dano. A vítima escolhe quem paga primeiro (Art. 942, p. único, CC). <span class="font-bold">NÃO HÁ ORDEM DE COBRANÇA.</span></p>
+                            <p class="text-sm font-bold text-indigo-700 mt-1">Exemplo: Empregado e Empregador em caso de acidente de trabalho. A vítima cobra o total de quem for mais fácil pagar.</p>
+                        </div>
+                        <div class="p-4 bg-pink-100 rounded-lg border-l-4 border-pink-500">
+                            <h4 class="font-extrabold text-pink-800">2. Responsabilidade SUBSIDIÁRIA</h4>
+                            <p class="text-sm text-slate-700 mt-1">Existe uma <span class="font-extrabold text-pink-900">ORDEM DE PREFERÊNCIA</span>. O devedor secundário só é acionado após a cobrança e o esgotamento dos bens do devedor principal (<span class="font-bold">Benefício de Ordem</span>).</p>
+                            <p class="text-sm font-bold text-pink-700 mt-1">Exemplo: O fiador só é acionado após os bens do devedor principal serem insuficientes.</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 p-3 rounded-lg border-l-4 alert-red font-extrabold">
+                        <span class="text-lg">LEMBRETE DE PROVA:</span> Na RC Civil por Ato de Terceiro, a regra é a <span class="text-red-900">SOLIDARIEDADE</span>. A vítima não precisa esgotar os bens do agente direto.
+                    </div>
+                </div>
+            </section>
+
+            <!-- SIMULADO FINAL -->
+            <section id="simulado" class="content-section">
+                <div class="bg-white p-6 rounded-xl shadow-2xl border-t-4 border-red-600">
+                    <h2 class="text-3xl font-extrabold text-red-700 border-b pb-3">📝 Simulado Final</h2>
+                    <p class="text-slate-600 mb-6">Revise e teste os pontos de atenção da RC. Responda às questões objetivas e confira as respostas discursivas.</p>
+                    
+                    <div id="quiz-container" class="space-y-6">
+                        <h3 class="text-2xl font-bold text-blue-800">Questões Objetivas</h3>
+                        <form id="quiz-form" class="space-y-4"></form>
+                        <button id="check-quiz-btn" class="w-full bg-blue-700 text-white font-bold py-3 rounded-lg hover:bg-blue-800 transition duration-200 shadow-xl disabled:bg-slate-400" disabled>Verificar Respostas</button>
+                        <div id="quiz-results" class="mt-6 p-4 rounded-lg text-center font-bold hidden border"></div>
+                    </div>
+                    
+                    <div class="mt-10 pt-6 border-t space-y-4">
+                        <h3 class="text-2xl font-bold text-blue-800">Questões Discursivas (Foco nos Alertas)</h3>
+                        <details class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                            <summary class="font-extrabold text-slate-800 cursor-pointer">1. Qual a diferença prática entre Dano Emergente e Lucros Cessantes? Ambos exigem prova?</summary>
+                             <div class="mt-2 pt-2 border-t text-sm text-slate-600">
+                                <p><strong>Diferença:</strong> <span class="font-extrabold text-red-700">Dano Emergente</span> é o prejuízo imediato e efetivo, o que a vítima <span class="font-extrabold">PERDEU</span>. <span class="font-extrabold text-green-700">Lucros Cessantes</span> é o ganho que a vítima <span class="font-extrabold">DEIXOU DE AUFERIR</span> (deixou de ganhar) de forma razoável. </p>
+                                <p><strong>Prova:</strong> <span class="font-extrabold text-red-700">SIM</span>. Ambos são danos patrimoniais e exigem prova de sua ocorrência e extensão.</p>
+                            </div>
+                        </details>
+                        <details class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                            <summary class="font-extrabold text-slate-800 cursor-pointer">2. Explique a Perda de uma Chance e o que é indenizado nesta teoria.</summary>
+                            <div class="mt-2 pt-2 border-t text-sm text-slate-600">
+                                <p><strong>Conceito:</strong> A Perda de uma Chance ocorre quando a conduta ilícita de alguém frustra uma <span class="font-extrabold text-blue-700">OPORTUNIDADE REAL E SÉRIA</span> da vítima de obter um resultado favorável ou evitar um prejuízo.</p>
+                                <p><strong>Indenização:</strong> O que é indenizado <span class="font-extrabold">NÃO</span> é o lucro final (que era incerto), mas sim a <span class="font-extrabold text-blue-700">PERDA DA POSSIBILIDADE/PROBABILIDADE</span> de obtê-lo (o próprio dano chance).</p>
+                            </div>
+                        </details>
+                        <details class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                             <summary class="font-extrabold text-slate-800 cursor-pointer">3. É possível cumular Dano Moral e Dano Estético? Qual a condição, segundo o STJ?</summary>
+                             <div class="mt-2 pt-2 border-t text-sm text-slate-600">
+                                <p><strong>Possibilidade:</strong> <span class="font-extrabold text-green-700">SIM</span>, é totalmente possível (Súmula 387 do STJ).</p>
+                                <p><strong>Condição:</strong> A condição é que os dois tipos de dano sejam oriundos de <span class="font-extrabold text-red-700">FATOS GERADORES DISTINTOS</span> (embora possam ocorrer no mesmo evento). O Dano Moral indeniza o sofrimento interno, e o Dano Estético, a alteração da aparência física.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentSections = document.querySelectorAll('.content-section');
+            const quizForm = document.getElementById('quiz-form');
+            const checkQuizBtn = document.getElementById('check-quiz-btn');
+            const quizResults = document.getElementById('quiz-results');
+
+            function showSection(targetId) {
+                contentSections.forEach(section => section.classList.remove('active'));
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) targetSection.classList.add('active');
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.dataset.target === targetId);
+                });
+            }
+
+            // Define a seção I como a seção inicial
+            showSection('modulo0');
+            navLinks.forEach(link => {
+                if (link.dataset.target === 'modulo0') {
+                    link.classList.add('active');
+                }
+            });
+
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => showSection(link.dataset.target));
+            });
+
+            // ARRAY DE DADOS DO QUIZ ATUALIZADO (14 QUESTÕES)
+            const quizData = [
+                // Questões Anteriores (Dano e Excludentes)
+                { q: "Questão 1: Um taxista tem seu veículo abalroado, resultando em 5 mil reais de prejuízo para o conserto e 3 mil reais de renda perdida durante os 10 dias de reparo. O valor de 5 mil reais para o conserto corresponde a:", options: ["a) Lucros Cessantes.", "b) Perda de uma Chance.", "c) Dano Estético.", "d) Dano Emergente."], answer: "d) Dano Emergente." },
+                { q: "Questão 2: Qual é o tipo de dano que representa a perda de uma oportunidade real de ganho, sendo indenizável a própria frustração da chance, e não o resultado incerto?", options: ["a) Lucros Cessantes, pois representa a perda de um lucro futuro.", "b) Dano Emergente, pois é o prejuízo material imediato.", "c) Dano Estético, por atingir a imagem profissional.", "d) Perda de uma Chance, aplicada em casos de frustração de probabilidade de êxito."], answer: "d) Perda de uma Chance, aplicada em casos de frustração de probabilidade de êxito." },
+                { q: "Questão 3: A responsabilidade do fornecedor por acidente de consumo é objetiva. No entanto, qual dos excludentes do nexo causal abaixo NÃO afasta o dever de indenizar?", options: ["a) Fortuito Externo.", "b) Fato de Terceiro.", "c) Fortuito Interno.", "d) Culpa Exclusiva da Vítima."], answer: "c) Fortuito Interno." },
+                { q: "Questão 4: Segundo a Súmula 387 do STJ, para que haja cumulação de Dano Moral e Dano Estético é essencial que:", options: ["a) Ambos decorram de regimes de responsabilidade distintos (Subjetiva e Objetiva).", "b) Ambos decorram de fatos geradores distintos, independentemente do mesmo evento.", "c) O Dano Estético seja o único dano extrapatrimonial sofrido.", "d) O Dano Moral seja apurado com base em prova pericial."], answer: "b) Ambos decorram de fatos geradores distintos, independentemente do mesmo evento." },
+                
+                // 10 Novas Questões
+                { q: "Questão 5: Qual dos elementos da responsabilidade civil é indispensável em qualquer modalidade (Subjetiva ou Objetiva), sendo sua prova sempre necessária para gerar o dever de indenizar?", options: ["a) Dolo ou Culpa.", "b) Nexo Causal.", "c) Ato Ilícito.", "d) Dano."], answer: "d) Dano." },
+                { q: "Questão 6: A responsabilidade civil decorrente do descumprimento de uma obrigação pré-existente (como um contrato de transporte) é classificada como:", options: ["a) Responsabilidade Aquiliana.", "b) Responsabilidade Subsidiária.", "c) Responsabilidade Extracontratual.", "d) Responsabilidade Contratual."], answer: "d) Responsabilidade Contratual." },
+                { q: "Questão 7: A responsabilidade civil dos profissionais liberais, dentro do Código de Defesa do Consumidor (CDC), constitui uma exceção à regra geral do CDC, sendo que para sua apuração é necessária a prova de:", options: ["a) Apenas o dano e o nexo causal.", "b) Ato ilícito e dolo.", "c) Culpa (Dolo ou Culpa Stricto Sensu).", "d) O risco inerente à sua atividade."], answer: "c) Culpa (Dolo ou Culpa Stricto Sensu)." },
+                { q: "Questão 8: Quando o lesado é obrigado a desviar seu tempo útil de lazer ou trabalho para resolver problemas causados por um fornecedor que deveria ter agido de forma eficiente, aplica-se a teoria do:", options: ["a) Fortuito Interno.", "b) Dano Inerente.", "c) Desvio Produtivo do Consumidor.", "d) Dano Moral Reflexo."], answer: "c) Desvio Produtivo do Consumidor." },
+                { q: "Questão 9: Em uma responsabilidade objetiva baseada na atividade de risco (Art. 927, p. único, CC), a vítima precisa provar o dolo ou a culpa do agente? E qual é o foco principal da sua prova?", options: ["a) Sim, ela deve provar a Culpa. O foco é no Dano.", "b) Não, a Culpa é dispensada. O foco é no Dano e no Nexo Causal.", "c) Sim, deve provar o Dolo. O foco é no Ato Ilícito.", "d) Não, a Culpa é dispensada. O foco é apenas no Ato Ilícito."], answer: "b) Não, a Culpa é dispensada. O foco é no Dano e no Nexo Causal." },
+                { q: "Questão 10: Um empregador responde por ato de seu empregado (preposto) que causou dano a um terceiro. Segundo o CC, esta responsabilidade é objetiva e, quanto ao dever de pagar a indenização, é classificada como:", options: ["a) Subsidiária, pois a vítima deve acionar primeiro o empregado.", "b) Solidária, permitindo à vítima escolher quem irá cobrar o valor total.", "c) Solidária, mas limitada ao teto do salário do empregado.", "d) Subjetiva, pois depende da prova de culpa 'in vigilando' do empregador."], answer: "b) Solidária, permitindo à vítima escolher quem irá cobrar o valor total." },
+                { q: "Questão 11: Qual elemento engloba o dolo, a negligência, a imprudência e a imperícia, sendo indispensável para a caracterização da Responsabilidade Subjetiva?", options: ["a) Ato Ilícito.", "b) Culpa Stricto Sensu.", "c) Culpa Lato Sensu.", "d) Fortuito Externo."], answer: "c) Culpa Lato Sensu." },
+                { q: "Questão 12: A Teoria da Causalidade adotada pelo Código Civil Brasileiro (Art. 403) exige que a indenização cubra os prejuízos que sejam consequência:", options: ["a) Somente dos atos dolosos do agente.", "b) Apenas do Fortuito Interno.", "c) Direta e Imediata do ato ilícito.", "d) Remota e Indireta do ato ilícito."], answer: "c) Direta e Imediata do ato ilícito." },
+                { q: "Questão 13: Um rompimento de tubulação de água em um prédio residencial, que inunda um apartamento, pode ser classificado como Caso Fortuito/Força Maior? E, se for, exclui a responsabilidade civil do condomínio (objetiva)?", options: ["a) Sim, é um Fortuito Externo e exclui a RC.", "b) Sim, mas é um Fortuito Interno e não exclui a RC.", "c) Não, é sempre Fato de Terceiro e exclui a RC.", "d) Não, Fortuito só se aplica em responsabilidade subjetiva."], answer: "b) Sim, mas é um Fortuito Interno e não exclui a RC." },
+                { q: "Questão 14: Em uma obrigação de indenizar classificada como 'subsidiária', o credor deve, obrigatoriamente:", options: ["a) Acionar todos os devedores simultaneamente.", "b) Acionar o devedor principal, respeitando o Benefício de Ordem.", "c) Acionar o devedor que tiver maior patrimônio.", "d) Abrir mão da cobrança contra o devedor secundário."], answer: "b) Acionar o devedor principal, respeitando o Benefício de Ordem." }
+            ];
+
+            function renderQuiz() {
+                quizForm.innerHTML = '';
+                quizData.forEach((questionData, index) => {
+                    const qDiv = document.createElement('div');
+                    qDiv.className = 'p-4 bg-white rounded-lg shadow border border-slate-200';
+                    const qTitle = document.createElement('p');
+                    qTitle.className = 'font-semibold text-slate-900 mb-3';
+                    qTitle.textContent = questionData.q;
+                    qDiv.appendChild(qTitle);
+                    questionData.options.forEach(option => {
+                        const optLabel = document.createElement('label');
+                        optLabel.className = 'flex items-center space-x-3 p-3 rounded-lg border-l-4 border-transparent quiz-option text-sm cursor-pointer';
+                        const input = document.createElement('input');
+                        input.type = 'radio';
+                        input.name = `question${index}`;
+                        input.value = option;
+                        input.className = 'w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500';
+                        optLabel.appendChild(input);
+                        optLabel.appendChild(document.createTextNode(option));
+                        qDiv.appendChild(optLabel);
+                        // Add change listener to enable the check button
+                        input.addEventListener('change', checkAllAnswered); 
+                    });
+                    quizForm.appendChild(qDiv);
+                });
+                checkAllAnswered(); // Initial check on load
+            }
+
+            function checkAllAnswered() {
+                const totalQuestions = quizData.length;
+                const answeredCount = document.querySelectorAll('input[type="radio"]:checked').length;
+                checkQuizBtn.disabled = answeredCount !== totalQuestions;
+            }
+            
+            checkQuizBtn.addEventListener('click', (event) => {
+                event.preventDefault();
+                let score = 0;
+                document.querySelectorAll('.quiz-option').forEach(el => el.classList.remove('correct-answer', 'incorrect-answer'));
+                quizData.forEach((questionData, index) => {
+                    const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
+                    const isCorrect = selectedOption && selectedOption.value === questionData.answer;
+                    const options = document.querySelectorAll(`input[name="question${index}"]`);
+                    options.forEach(opt => {
+                        if (opt.value === questionData.answer) {
+                            opt.parentElement.classList.add('correct-answer');
+                        }
+                        if (opt.checked && !isCorrect) {
+                            opt.parentElement.classList.add('incorrect-answer');
+                        }
+                    });
+                    if (isCorrect) score++;
+                });
+
+                quizResults.classList.remove('hidden', 'bg-red-100', 'border-red-400', 'bg-green-100', 'border-green-400');
+                const scorePercentage = (score / quizData.length) * 100;
+                let feedbackText = `Seu resultado: ${score} de ${quizData.length} (${scorePercentage.toFixed(0)}%). `;
+                let resultClass = 'bg-red-100 border-red-400';
+                if (scorePercentage === 100) {
+                    feedbackText += "EXCELENTE! Você dominou o Dano!";
+                    resultClass = 'bg-green-100 border-green-400';
+                } else if (scorePercentage >= 75) {
+                    feedbackText += "Ótimo trabalho! Quase lá!";
+                    resultClass = 'bg-green-100 border-green-400';
+                } else {
+                    feedbackText += "Ainda precisa revisar os conceitos de Dano. Volte ao Módulo III!";
+                }
+                quizResults.textContent = feedbackText;
+                quizResults.classList.add(resultClass);
+                checkQuizBtn.disabled = true;
+            });
+            
+            renderQuiz();
+        });
+    </script>
+</body>
+</html>
